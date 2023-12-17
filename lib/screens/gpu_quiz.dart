@@ -1,26 +1,22 @@
 import 'dart:async';
+import 'package:assignment/models/db_connect_gpu.dart';
 import 'package:flutter/material.dart';
 import '../constants.dart';
 import '../models/question_model.dart';
 import '../widgets/question_widget.dart';
 import '../widgets/option_card.dart';
 import '../widgets/result_box.dart';
-import '../models/db_connect.dart';
 
-void main() {
-  runApp(const MaterialApp(
-    home: HomeScreen(),
-  ));
-}
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+
+class GpuQuizScreen extends StatefulWidget {
+  const GpuQuizScreen({Key? key}) : super(key: key);
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _GpuQuizScreenState createState() => _GpuQuizScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _GpuQuizScreenState extends State<GpuQuizScreen> {
   var db = DBconnect();
   late Future<List<Question>> _questions;
   late List<Question> extractedData;
@@ -246,7 +242,7 @@ class _HomeScreenState extends State<HomeScreen> {
             return Scaffold(
               backgroundColor: background,
               appBar: AppBar(
-                title: const Text('Quiz: All'),
+                title: const Text('Quiz: CPU'),
                 backgroundColor: background,
                 shadowColor: Colors.transparent,
                 actions: [

@@ -1,4 +1,5 @@
 // import the material package
+import 'package:assignment/screens/cpu_quiz.dart';
 import 'package:flutter/material.dart';
 
 import './screens/home_screen.dart'; // the file we just created.
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       // remove the debug banner
       debugShowCheckedModeBanner: false,
       // set a homepage
-      home: HomeScreen(), // we will create this in separate file.
+      home: CpuQuizScreen(), // we will create this in separate file.
     );
   }
 }

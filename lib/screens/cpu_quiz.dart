@@ -5,22 +5,17 @@ import '../models/question_model.dart';
 import '../widgets/question_widget.dart';
 import '../widgets/option_card.dart';
 import '../widgets/result_box.dart';
-import '../models/db_connect.dart';
+import '../models/db_connect_cpu.dart';
 
-void main() {
-  runApp(const MaterialApp(
-    home: HomeScreen(),
-  ));
-}
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class CpuQuizScreen extends StatefulWidget {
+  const CpuQuizScreen({Key? key}) : super(key: key);
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _CpuQuizScreenState createState() => _CpuQuizScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _CpuQuizScreenState extends State<CpuQuizScreen> {
   var db = DBconnect();
   late Future<List<Question>> _questions;
   late List<Question> extractedData;
@@ -246,7 +241,7 @@ class _HomeScreenState extends State<HomeScreen> {
             return Scaffold(
               backgroundColor: background,
               appBar: AppBar(
-                title: const Text('Quiz: All'),
+                title: const Text('Quiz: CPU'),
                 backgroundColor: background,
                 shadowColor: Colors.transparent,
                 actions: [
